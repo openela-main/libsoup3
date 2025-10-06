@@ -1,0 +1,30 @@
+From a2eaa4aab2b62976118a4a62f5041eead5c90a02 Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@redhat.com>
+Date: Thu, 1 May 2025 08:57:46 -0500
+Subject: [PATCH] Reduce runtime of http2-body-size test
+
+This test is *really* slow and I think it would be excessive to increase
+the test timeout any further, so let's test less data.
+
+Fixes #444
+Obsoletes: !309
+---
+ tests/http2-body-stream-test.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/http2-body-stream-test.c b/tests/http2-body-stream-test.c
+index 540beb3b..c53f22bc 100644
+--- a/tests/http2-body-stream-test.c
++++ b/tests/http2-body-stream-test.c
+@@ -24,7 +24,7 @@ static void
+ do_large_data_test (void)
+ {
+ #define CHUNK_SIZE ((gsize)1024 * 1024 * 512) // 512 MiB
+-#define TEST_SIZE (CHUNK_SIZE * 20) // 10 GiB
++#define TEST_SIZE (CHUNK_SIZE * 4) // 2 GiB
+ 
+         GInputStream *stream = soup_body_input_stream_http2_new ();
+         SoupBodyInputStreamHttp2 *mem_stream = SOUP_BODY_INPUT_STREAM_HTTP2 (stream);
+-- 
+GitLab
+
