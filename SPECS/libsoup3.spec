@@ -161,10 +161,10 @@ install -m 644 -D tests/libsoup.supp %{buildroot}%{_datadir}/libsoup-3.0/libsoup
 * Wed Jan 07 2026 Michael Catanzaro <mcatanzaro@redhat.com> - 3.6.5-8
 - Fix CVE-2025-14523
 
-* Tue Dec 09 2025 Michael Catanzaro <mcatanzaro@redhat.com> - 3.6.5-7
+* Thu Dec 11 2025 Michael Catanzaro <mcatanzaro@redhat.com> - 3.6.5-7
 - Add patch for CVE-2025-12105
 
-* Wed Oct 22 2025 RHEL Packaging Agent <jotnar@redhat.com> - 3.6.5-6
+* Tue Dec 09 2025 RHEL Packaging Agent <jotnar@redhat.com> - 3.6.5-6
 - Fix integer overflow in date/time parsing
 
 * Tue May 27 2025 Michael Catanzaro <mcatanzaro@redhat.com> - 3.6.5-5
